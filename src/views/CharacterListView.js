@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { CharacterList } from "../components";
+import Spinner from '../components/UI/Spinner';
 // import actions
 import {fetchData} from '../actions';
 
@@ -13,7 +14,7 @@ class CharacterListView extends React.Component {
   render() {
     let characters = [];
     if (this.props.fetching) {
-      characters = <p>Spinner</p>
+      characters = <Spinner />
     }
     if (this.props.characters.length > 0) {
       characters = <CharacterList characters={this.props.characters} />
